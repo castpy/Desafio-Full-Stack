@@ -4,12 +4,14 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from '../pages/Home'
 import Signin from '../pages/Signin'
 import Signup from '../pages/Signup'
+//Importando Hook
+import userAuth from '../hook/userAuth'
 
 
 //Configurando condições de rota
 //Recebendo o item Home se "signed" for True
 const Private = ({ Item }) => {
-    const signed = false
+    const { signed } = userAuth()
     return signed > 0 ? <Item /> : <Signin />
 }
 
