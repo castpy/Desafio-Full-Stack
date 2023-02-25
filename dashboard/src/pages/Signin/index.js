@@ -3,9 +3,8 @@ import React, { useState, useEffect } from 'react'
 import useAuth from '../../hook/userAuth'
 import Input from '../../Components/Input'
 import Button from '../../Components/Button'
-import GoogleLogin from 'react-google-login'
 import { Link, useNavigate } from 'react-router-dom'
-import { gapi } from 'gapi-script'
+import GoogleButton from '../../Components/LoginComGoogle/GoogleButton'
 
 const Signin = () => {
   const { signin } = useAuth();
@@ -15,18 +14,6 @@ const Signin = () => {
   const [senha, setSenha] = useState("")
   const [error, setError] = useState("")
   
-  //ajustando bug de popup fechado - gapi
-  const clientId ='917773234636-gjsvdarhan48547bvbm59nudfnbni5on.apps.googleusercontent.com'
-  useEffect(() => {
-    gapi.load("client:auth2", () => {
-      gapi.auth2.init({clientId:clientId})
-    })
-  }, [])
-  const responseGoogle = (response) => {
-    console.log(response)
-      
-  }
-
   const handleLogin = () => {
     if (!email | !senha){
       setError("Preencha todos os campos!")
@@ -61,12 +48,7 @@ const Signin = () => {
         />
         <C.LabelError>{error}</C.LabelError>
         <Button Text="Entrar" onClick={handleLogin} />
-        <GoogleLogin 
-          clientId={clientId}
-          buttonText='Continuar com Google' 
-          onSuccess={responseGoogle} 
-          onFailure={responseGoogle}
-        />
+        <GoogleButton/>
         <C.LabelSignup>
           Não tem conta?
           <C.Strong>
