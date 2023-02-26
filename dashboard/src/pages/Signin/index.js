@@ -1,5 +1,5 @@
 import * as C from './styles'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import useAuth from '../../hook/userAuth'
 import Input from '../../Components/Input'
 import Button from '../../Components/Button'
