@@ -4,6 +4,7 @@ import useAuth from '../../hook/userAuth'
 import Input from  '../../Components/Input'
 import Button from '../../Components/Button'
 import { Link, useNavigate } from "react-router-dom"
+import GoogleButton from '../../Components/LoginComGoogle/GoogleButton'
 
 const Signup = () => {
   const [email, setEmail] = useState("")
@@ -58,6 +59,7 @@ const Signup = () => {
         />
         <C.labelError>{error}</C.labelError>
         <Button Text="Inscrever-se" onClick={handleSignup} />
+        <GoogleButton/>
         <C.LabelSignin>
           Já tem uma conta?
           <C.Strong>
