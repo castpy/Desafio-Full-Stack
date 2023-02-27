@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
 import { GoogleLogin } from 'react-google-login';
+import { useNavigate } from 'react-router-dom'
 import { gapi } from 'gapi-script'
 
 //Id de acesso a API do google login
 const clientId ='928406916720-tqvljcjn4q1kkbae34gldo93ktdpo0kp.apps.googleusercontent.com'
+const navigate = useNavigate();
+
 
 //ajustando bug de popup fechado - gapi
 const GoogleButton = () => {
@@ -17,7 +20,7 @@ const GoogleButton = () => {
     console.log(response);
 
     //redirecionando o usuário
-    window.location.href = "/home";
+    navigate("/home")
   };
 
   return (
