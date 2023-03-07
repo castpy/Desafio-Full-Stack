@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { gapi } from 'gapi-script'
 
 //Id de acesso a API do google login
-const clientId ='928406916720-tqvljcjn4q1kkbae34gldo93ktdpo0kp.apps.googleusercontent.com'
+const clientId ='351191209898-vbejq41dev7jue0enrs4ejvt5ur2tnbf.apps.googleusercontent.com'
 
 //ajustando bug de popup fechado - gapi
 const GoogleButton = () => {
