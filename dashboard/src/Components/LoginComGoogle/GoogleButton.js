@@ -5,11 +5,10 @@ import { gapi } from 'gapi-script'
 
 //Id de acesso a API do google login
 const clientId ='928406916720-tqvljcjn4q1kkbae34gldo93ktdpo0kp.apps.googleusercontent.com'
-const navigate = useNavigate();
-
 
 //ajustando bug de popup fechado - gapi
 const GoogleButton = () => {
+  const navigate = useNavigate();
   useEffect(() => {
       gapi.load("client:auth2", () => {
         gapi.auth2.init({clientId:clientId})
